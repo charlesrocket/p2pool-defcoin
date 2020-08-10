@@ -40,7 +40,7 @@ Prepare Defcoin core and edit the config file:
 To use P2Pool, you must be running your own local bitcoind. For standard
 configurations, using P2Pool should be as simple as:
 
-    python run_p2pool.py
+    python run_p2pool.py --net defcoin -a YOURADDR -n YOURIP --bitcoind-p2p-port 10332
 
 Then run your miner program, connecting to 127.0.0.1 on port 1335 with any
 username and password.
