@@ -69,7 +69,7 @@ dfc_scrypt module that includes the scrypt proof of work code that Defcoin uses 
 
 Linux:
 
-    cd defcoin_scrypt
+    cd litecoin_scrypt
     sudo python setup.py install
 
 Windows (mingw):
