@@ -97,26 +97,6 @@ In bash type this:
 	
 If you run into an error with unrecognized command line option '-mno-cygwin', see this:
 http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
-
-Running P2Pool:
--------------------------
-Run P2Pool with the "--net defcoin" option.
-Run your miner program, connecting to 127.0.0.1 on port 9327.
-Forward port 9338 to the host running P2Pool.
-
-Defcoin's use of ports 1337 and 1335 conflicts with P2Pool running on
-the Bitcoin network. To avoid problems, add these lines to defcoin.conf
-and restart defcoind:
-
-    rpcport=10332
-    port=10333
-
-Sponsors:
--------------------------
-
-Thanks to:
-* The Bitcoin Foundation for its generous support of P2Pool
-* The Defcoin Project for its generous donations to P2Pool
  
 License:
 -------------------------
