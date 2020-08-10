@@ -28,9 +28,9 @@ RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
 	(yield bitcoind.rpc_getblockchaininfo())['chain'] != 'test'
 ))
 
-BLOCK_EXPLORER_URL_PREFIX = 'https://explorer.litecoinca.sh/block/'
-ADDRESS_EXPLORER_URL_PREFIX = 'https://explorer.litecoinca.sh/address/'
-TX_EXPLORER_URL_PREFIX = 'https://explorer.litecoinca.sh/tx/'
+BLOCK_EXPLORER_URL_PREFIX = 'https://explorer.def-coin.org/block/'
+ADDRESS_EXPLORER_URL_PREFIX = 'https://explorer.def-coin.org/address/'
+TX_EXPLORER_URL_PREFIX = 'https://explorer.def-coin.org/tx/'
 
 SUBSIDY_FUNC = lambda height: 50*100000000 >> (height + 1)//840000
 SUBSIDY_DECIMAL = 1e-8
