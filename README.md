@@ -20,6 +20,23 @@ Windows:
 
 Running P2Pool:
 -------------------------
+Prepare Defcoin core and edit the config file:
+
+    connect=129.2.164.234:1337
+    connect=107.191.119.170:1337
+    connect=199.204.211.87:1337
+    connect=104.37.196.137:1337
+    connect=137.117.89.23:1337
+    rpcuser=xxx
+    rpcpassword=xxx
+    rpcallowip=127.0.0.1
+    daemon=1
+    server=1
+    listen=1
+    maxconnections=64
+    port=10332
+    rpcport=1335
+
 To use P2Pool, you must be running your own local bitcoind. For standard
 configurations, using P2Pool should be as simple as:
 
