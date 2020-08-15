@@ -93,8 +93,8 @@ Windows (Microsoft Visual C++)
 
 In bash type this:
 
-    SET VS90COMNTOOLS=%VS110COMNTOOLS%	           # For visual c++ 2012
-    SET VS90COMNTOOLS=%VS100COMNTOOLS%             # For visual c++ 2010
+    SET VS90COMNTOOLS=%VS110COMNTOOLS%        # For visual c++ 2012
+    SET VS90COMNTOOLS=%VS100COMNTOOLS%        # For visual c++ 2010
     cd defcoin_scrypt
     C:\Python27\python.exe setup.py build --compile=mingw32 install
 	
