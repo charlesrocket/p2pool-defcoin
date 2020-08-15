@@ -58,7 +58,13 @@ https://en.bitcoin.it/wiki/P2Pool
 
 Alternate web frontend:
 -------------------------
-* https://github.com/hardcpp/P2PoolExtendedFrontEnd
+
+    cd ..
+    mv web-static web-static.old
+    git clone https://github.com/justino/p2pool-ui-punchy web-static
+    mv web-static.old web-static/legacy
+    cd web-static
+    git clone https://github.com/hardcpp/P2PoolExtendedFrontEnd ext
 
 Notes for Defcoin:
 =========================
