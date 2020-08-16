@@ -100,6 +100,8 @@ In bash type this:
 	
 If you run into an error with unrecognized command line option '-mno-cygwin', see this:
 http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
+
+_Tested on Ubuntu 16_
  
 License:
 -------------------------
