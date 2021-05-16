@@ -168,3 +168,4 @@ TODO:
 * link to whoever's defcoin repo is the main one now
 * alt frontends options investigation
 * firewall rules - were all 4 needed?
+* fix complaint about version being dirty when modifying p2pool/networks/defcoin.py to choose node type. After that is fixed, make sure it doesn't complain if you change the web frontend. Lastly make sure it wont complain by creating a run.sh script.
