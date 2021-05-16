@@ -1,10 +1,15 @@
 Requirements:
--------------------------
+=========================
+To use P2Pool, you must be running your own local defcoind. It takes a while to sync so get that started first.
+
+
 Generic:
 * defcoind >=1.0.0
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
+
+NOTE: IF USING UBUNTU, USE 16 OR 18. Starting with 20 they removed some of the libs from global, and i was seeing instability with 20 (but that could have just been me). Just a note to make your life easier.
 
 Linux:
 * sudo apt-get install python-zope.interface python-twisted python-twisted-web python-dev
@@ -18,30 +23,75 @@ Windows:
 * Install [python win32 api wmi wrapper](https://pypi.python.org/pypi/WMI/#downloads)
 * Unzip the files into C:\Python27\Lib\site-packages
 
+
 Running P2Pool:
+=========================
+
+You can run a "private" node to connect your miner(s) to or a public pool.
+
+
+All
 -------------------------
+Configuration:
+Edit p2pool/networks/defcoin.py by uncommenting WORKER_PORT and BOOTSTRAP_ADDRS for the type of node you want to run. The 3 pool types are as follows. Take note that these hash ranges are an early division and may be modified (feedback welcome).
+* pool 0, CPU, <1mh, port 13370 --> CPU miners
+* pool 1, USB, 1mh to 50mh, port 13371 --> USB ASIC miners like moonlanders and gridseed
+* pool 2, ASIC, >50mh, port 13372 --> big ASIC miners like antminer L3
 
-To use P2Pool, you must be running your own local bitcoind. For standard
-configurations, using P2Pool should be as simple as:
 
-    python run_p2pool.py --net defcoin -a YOURADDR -n YOURIP --bitcoind-p2p-port 10332
+Now that it is configured, a few definitions for clarity:
+* YOURADDR - the address of the wallet of the local defcoind running the pool
+* USERNAME - as a miner, your defcoin payout address
+* MININGPORT - port to mine to as defined when you chose your configuration
+* YOUR_LOCAL_IP - IPv4 of pool computer such as 192.168.1.46
+* YOUR_PUBLIC_IP - IPv4 of pool computer such as 135.148.43.187
 
-Then run your miner program, connecting to 127.0.0.1 on port 1335 with any
-username and password.
-
-If you are behind a NAT, you should enable TCP port forwarding on your
-router. Forward port 1337 to the host running P2Pool.
 
 Run for additional options.
 
     python run_p2pool.py --help
 
-Official wiki:
+
+Example commands for running your miners:
+* CPU: ./minerd -a scrypt -o stratum+tcp://IP:MININGPORT -O USERNAME:x
+* USB: bfgminer.exe --scrypt -o stratum+tcp://IP:MININGPORT -u USERNAME -p 1,d=128 -S MLD:all --set MLD:clock=600
+
+
+Private - needs testing so might have errors
 -------------------------
+For standard configurations, using P2Pool should be as simple as:
+
+    python run_p2pool.py --net defcoin -a YOURADDR -n YOUR_LOCAL_IP --bitcoind-p2p-port 10332
+
+If mining from the pool computer, run your miner program, connecting to 127.0.0.1 on port MININGPORT with USERNAME and any password (x is used commonly).
+
+If mining from another local source, run your miner program, connecting YOUR_LOCAL_IP on port MININGPORT with USERNAME and any password (x is used commonly). Probably need to open firewall on pool computer to MININGPORT.
+
+
+Public
+-------------------------
+For standard configurations, using P2Pool should be as simple as:
+
+    python run_p2pool.py --net defcoin -a YOURADDR -n YOUR_PUBLIC_IP --bitcoind-p2p-port 10332
+
+Connecting your miners to YOUR_PUBLIC_IP on port MININGPORT with USERNAME and any password (x is used commonly).
+
+Probably need to open firewall on pool computer to MININGPORT.
+
+If you are behind a NAT, you should enable TCP port forwarding on your router. Forward port MININGPORT to the host running P2Pool.
+
+
+NOTE: Past experience showed need of opening of ports MININGPORT, 1335, 1337, 10332. All 4 might not need to be open thus this note instead of a firewall rules/port forwarding section, and being listed in todo.
+
+
+
+Official wiki:
+=========================
 https://en.bitcoin.it/wiki/P2Pool
 
+
 Alternate web frontend:
--------------------------
+=========================
 
     cd ..
     mv web-static web-static.old
@@ -49,6 +99,9 @@ Alternate web frontend:
     mv web-static.old web-static/legacy
     cd web-static
     git clone https://github.com/hardcpp/P2PoolExtendedFrontEnd ext
+
+There are multiple alt frontends out there to choose from.
+
 
 Notes for Defcoin:
 =========================
@@ -101,11 +154,17 @@ In bash type this:
 If you run into an error with unrecognized command line option '-mno-cygwin', see this:
 http://stackoverflow.com/questions/6034390/compiling-with-cython-and-mingw-produces-gcc-error-unrecognized-command-line-o
 
-_Tested on Ubuntu 16_
- 
-License:
--------------------------
+_Tested on Ubuntu 16 and 18_
 
+
+License:
+=========================
 [Available here](COPYING)
 
 
+TODO:
+=========================
+* migrate to python 3 (this fork or base p2pool)
+* link to whoever's defcoin repo is the main one now
+* alt frontends options investigation
+* firewall rules - were all 4 needed?

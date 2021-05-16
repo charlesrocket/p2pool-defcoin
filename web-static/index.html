@@ -134,6 +134,14 @@
         <p>Node uptime: <span id="uptime"></span> Peers: <span id="peers_out"></span> out, <span id="peers_in"></span> in</p>
         <p>Local rate: <span id="local_rate"></span> (<span id="local_doa"></span> DOA) Expected time to share: <span id="time_to_share"></span></p>
         <p>Shares: <span id="shares_total"></span> total (<span id="shares_orphan"></span> orphaned, <span id="shares_dead"></span> dead) Efficiency: <span id="efficiency"></span></p>
+        <p></p>
+        <p>Example commands for running your miners:
+            <ul>
+                <li>CPU: ./minerd -a scrypt -o stratum+tcp://IP:MININGPORT -O USERNAME:x</li>
+                <li>USB: bfgminer.exe --scrypt -o stratum+tcp://IP:MININGPORT -u USERNAME -p 1,d=128 -S MLD:all --set MLD:clock=600</li>
+            </ul>
+        </p>
+        <p></p>
         <p>Payout if a block were found NOW: <span id="payout_totamount"></span> <span class="symbol"></span> to <a id="payout_addrs"></a>. Expected after mining for 24 hours:  <span id="expected_payout_amount"></span> <span class="symbol"></span> per block.</p>
         <p>Current block value: <span id="block_value"></span> <span class="symbol"></span> Expected time to block: <span id="time_to_block"></span></p>
         <div id="warnings"></div>
