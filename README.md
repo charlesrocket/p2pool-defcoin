@@ -164,7 +164,6 @@ License:
 
 TODO:
 =========================
-* migrate to python 3 (this fork or base p2pool)
 * link to whoever's defcoin repo is the main one now
 * alt frontends options investigation
 * firewall rules - were all 4 needed?
