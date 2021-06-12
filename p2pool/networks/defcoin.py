@@ -5,9 +5,10 @@ from p2pool.bitcoin import networks
 #***  listed rates are not hard set yet  ***#
 #############################################
 
-# pool 0, CPU, <1mh
-#WORKER_PORT = 13370
-#BOOTSTRAP_ADDRS = ['135.148.43.187']
+##### CPU pool is for future use for slower miners when network is larger #####
+###### pool 0, CPU, <1mh
+######WORKER_PORT = 13370
+######BOOTSTRAP_ADDRS = ['135.148.43.187']
 
 # pool 1, USB, 1mh to 50mh
 #WORKER_PORT = 13371

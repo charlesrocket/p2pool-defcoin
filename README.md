@@ -34,7 +34,7 @@ All
 -------------------------
 Configuration:
 Edit p2pool/networks/defcoin.py by uncommenting WORKER_PORT and BOOTSTRAP_ADDRS for the type of node you want to run. The 3 pool types are as follows. Take note that these hash ranges are an early division and may be modified (feedback welcome).
-* pool 0, CPU, <1mh, port 13370 --> CPU miners
+* ~~pool 0, CPU, <1mh, port 13370 --> CPU miners~~ CPU pool is for future use for slower miners when network is larger
 * pool 1, USB, 1mh to 50mh, port 13371 --> USB ASIC miners like moonlanders and gridseed
 * pool 2, ASIC, >50mh, port 13372 --> big ASIC miners like antminer L3
 
@@ -45,6 +45,9 @@ Now that it is configured, a few definitions for clarity:
 * MININGPORT - port to mine to as defined when you chose your configuration
 * YOUR_LOCAL_IP - IPv4 of pool computer such as 192.168.1.46
 * YOUR_PUBLIC_IP - IPv4 of pool computer such as 135.148.43.187
+
+
+FYI you can get defcoin addr with defcoin-cli listreceivedbyaddress 0 true
 
 
 Run for additional options.
