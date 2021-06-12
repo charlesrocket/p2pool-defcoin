@@ -34,8 +34,8 @@ All
 -------------------------
 Configuration:
 Edit p2pool/networks/defcoin.py by uncommenting WORKER_PORT and BOOTSTRAP_ADDRS for the type of node you want to run. The 3 pool types are as follows. Take note that these hash ranges are an early division and may be modified (feedback welcome).
-* ~~pool 0, CPU, <1mh, port 13370 --> CPU miners~~ CPU pool is for future use for slower miners when network is larger
-* pool 1, USB, 1mh to 50mh, port 13371 --> USB ASIC miners like moonlanders and gridseed
+* ~~pool 0, CPU, <1mh, port 13370 --> CPU miners~~ CPU pool is for future use for slower miners when network is larger. Until then mine on USB
+* pool 1, USB, <=50mh, port 13371 --> USB ASIC miners like moonlanders and gridseed (and CPUs until that pool is started)
 * pool 2, ASIC, >50mh, port 13372 --> big ASIC miners like antminer L3
 
 
