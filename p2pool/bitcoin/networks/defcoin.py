@@ -20,7 +20,7 @@ CONF_FILE_FUNC = lambda: os.path.join(
 'defcoin.conf')
 
 P2P_PORT = 1337
-P2P_PREFIX = 'fbc0b6db'.decode('hex')
+P2P_PREFIX = '7bc6d2db'.decode('hex')
 RPC_PORT = 1335
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
 	(yield helper.check_block_header(bitcoind, '192047379f33ffd2bbbab3d53b9c4b9e9b72e48f888eadb3dcf57de95a6038ad')) and # genesis block
